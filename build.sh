@@ -33,10 +33,21 @@ DEFCONFIG_N7FE=moro-grace_defconfig
 K_VERSION="v8.8.1"
 K_SUBVER="8"
 K_BASE="CUA1"
-K_NAME="MoRoKernel"
+K_NAME="ReMoRoKernel"
 export KBUILD_BUILD_VERSION="1"
 
+# --- Configurações para S7 Edge (G935) ---
+CR_DTS_ONEUI_EDGE="arch/arm64/boot/dts/exynos8890-hero2lte_eur_open_08.dtb"
+CR_DTS_TREBLE_EDGE="arch/arm64/boot/dts/exynos8890-hero2lte_treble.dtb"
 
+# --- Configurações para S7 Flat (G930) ---
+CR_DTS_ONEUI_FLAT="arch/arm64/boot/dts/exynos8890-herolte_eur_open_08.dtb"
+CR_DTS_TREBLE_FLAT="arch/arm64/boot/dts/exynos8890-herolte_treble.dtb"
+
+# --- Definição de uso (Mude conforme o aparelho que for compilar) ---
+# Se for compilar para FLAT, mude as variáveis abaixo para _FLAT
+CR_DTB_MOUNT=$CR_DTS_ONEUI
+CR_DTB_MOUNT=$CR_DTS_TREBLE
 #
 # FUNCTIONS
 # ---------
